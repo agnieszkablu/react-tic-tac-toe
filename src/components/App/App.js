@@ -1,24 +1,16 @@
-import logo from '../../img/logo.svg';
-import './App.css';
+import logo from '../../assets/logo.svg';
+import styles from './App.module.css';
+import Board from '../Board';
 import Square from '../Square';
 
 function App() {
+  //Tic Tac Toe game based on the tutorial https://react.dev/learn/tutorial-tic-tac-toe#setup-for-the-tutorial
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <Square />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
+    <div>
+      <header className={styles.header}>
+        <img src={logo} className={styles.logo} alt='logo' />
+        <h1>Tic Tac Toe</h1>
+        <Board numCols={3} numRows={3} children={Square} />
       </header>
     </div>
   );
