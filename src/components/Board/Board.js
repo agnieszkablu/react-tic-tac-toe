@@ -3,11 +3,22 @@ import styles from './Board.module.css';
 import { range } from '../../utils.js';
 
 function Board({ numRows, numCols, children: ChildComponent }) {
+  const [isXNext, setIsXNext] = React.useState(true);
   const [squares, setSquares] = React.useState(Array(9).fill(null));
 
   function handleClick(index) {
+    // Return early to prevent double click and changing the previous value
+    if(squares[index]) return;
+
     let nextSquares = [...squares];
-    nextSquares[index] = 'X';
+    
+    if(isXNext) {
+      nextSquares[index] = 'X';
+    } else {
+      nextSquares[index] = 'O';
+    }
+
+    setIsXNext(!isXNext);
     setSquares(nextSquares);
   }
 
