@@ -1,6 +1,6 @@
 import styles from './Square.module.css';
 
-function Square({cellIndex, value, onSquareClick}) {
+function Square({value, onSquareClick}) {
 
   return (
     <button
