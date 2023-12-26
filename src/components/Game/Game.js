@@ -18,8 +18,8 @@ function Game() {
   const winner = calculateWinner(currentSquares);
   let gameStatus;
 
-  if (winner) {
-    gameStatus = 'The winner is: ' + winner;
+  if (winner && winner[0]) {
+    gameStatus = 'The winner is: ' + winner[0];
   } else {
     gameStatus = 'Next player is:' + (isXNext ? 'X' : 'O');
   }
@@ -59,7 +59,7 @@ function Game() {
   return (
     <>
       <h2 className={styles.status}>{gameStatus}</h2>
-      <div className={styles.wrapper}>
+      <div className={`${styles.wrapper} row`}>
         <div className='board'>
           <Board
             numCols={3}
@@ -68,6 +68,7 @@ function Game() {
             squares={currentSquares}
             isXNext={isXNext}
             onPlay={handlePlay}
+            winner={winner}
           />
         </div>
         <div className='info'>

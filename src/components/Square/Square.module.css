@@ -12,3 +12,8 @@
   text-align: center;
   width: 34px;
 }
+
+.success {
+  background-color: #1c831c;
+  color: #fff;
+}

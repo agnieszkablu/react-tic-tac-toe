@@ -60,6 +60,10 @@ ul {
   font-size: 14px;
 }
 
+ol {
+  margin-top: 0;
+}
+
 .row {
   display: flex;
 }
